@@ -1,0 +1,22 @@
+class DeviseCreateTwitterAuths < ActiveRecord::Migration
+  def self.up
+    create_table(:twitter_auths) do |t|
+      t.trackable
+      # t.encryptable
+      # t.confirmable
+      # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
+      # t.token_authenticatable
+      t.timestamps
+    end
+
+    # add_index :twitter_auths, :email,                :unique => true
+    # add_index :twitter_auths, :reset_password_token, :unique => true
+    # add_index :twitter_auths, :confirmation_token,   :unique => true
+    # add_index :twitter_auths, :unlock_token,         :unique => true
+    # add_index :twitter_auths, :authentication_token, :unique => true
+  end
+
+  def self.down
+    drop_table :twitter_auths
+  end
+end
