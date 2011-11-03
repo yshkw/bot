@@ -1,10 +1,12 @@
 Sample::Application.routes.draw do
-  get "omniauth_callbacks/twitter"
 
-  devise_for :twitter_auths, :controllers => {:omniauth_callbacks => "omniauth_callbucks"}
-
-  devise_for :simple_users
-  
+  root :to => 'welcome#index'
+  #  get "omniauth_callbacks/twitter"
+#  root :to => "omniauth_callbacks/index"
+  devise_for :twitter_auths, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}do
+    get '/twitter_auths/sign_out', :to => 'devise/session#destroy',:as => :destroy_user_session
+  end
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
