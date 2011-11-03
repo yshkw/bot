@@ -37,3 +37,6 @@ end
 
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
+
+gem 'ezcrypto'
+gem 'json'
